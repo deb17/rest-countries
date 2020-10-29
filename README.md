@@ -1,24 +1,6 @@
-# rest-countries
+# Countries at a glance
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is the solution to a Frontend Mentors [challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). The
+homepage shows the flags of all countries using the 
+[REST countries api](https://restcountries.eu/). Each country gets its own details page.
+The project is built with Vue and Buefy. Access it at
