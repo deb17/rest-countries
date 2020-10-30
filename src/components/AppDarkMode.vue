@@ -106,6 +106,10 @@ html {
 .card span {
   font-weight: 600;
 }
+#not-found {
+  font-weight: 600;
+  color: var(--text);
+}
 .input,
 .input::placeholder,
 .fa-search,

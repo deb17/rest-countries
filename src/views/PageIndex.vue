@@ -60,7 +60,7 @@
           </div>
         </div>
         <div v-else>
-          <h2 class="title is-2">Nothing found.</h2>
+          <h3 class="title is-3" id="not-found">Nothing found.</h3>
         </div>
       </div>
     </div>
