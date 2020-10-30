@@ -52,7 +52,7 @@ export default new Vuex.Store({
   },
   actions: {
     getAll() {
-      fetch('https://restcountries.eu/rest/v2/all')
+      return fetch('https://restcountries.eu/rest/v2/all')
         .then(res => res.json())
         .then(data => this.commit('updateCountries', data))
         .catch(err => console.log(err))

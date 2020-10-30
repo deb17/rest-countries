@@ -1,5 +1,5 @@
 <template>
-  <div v-if="countries.length > 0">
+  <div v-if="ready">
     <div class="section pt-3">
       <div class="container">
         <div class="level">
@@ -26,7 +26,7 @@
     </div>
     <div class="section">
       <div class="container">
-        <div class="columns is-multiline">
+        <div v-if="countries.length > 0" class="columns is-multiline">
           <div
             class="column is-one-quarter"
             v-for="country in countries"
@@ -59,6 +59,9 @@
             </router-link>
           </div>
         </div>
+        <div v-else>
+          <h2 class="title is-2">Nothing found.</h2>
+        </div>
       </div>
     </div>
   </div>
@@ -69,14 +72,15 @@ export default {
   data() {
     return {
       name: '',
-      region: null
+      region: null,
+      ready: false
     }
   },
   computed: {
     countries() {
       const all = this.$store.getters.all
       const some = all.filter(cntry =>
-        cntry.name.toLowerCase().startsWith(this.name)
+        cntry.name.toLowerCase().startsWith(this.name.toLowerCase())
       )
       if (this.region !== null) {
         return some.filter(cntry => cntry.region === this.region)
@@ -90,7 +94,11 @@ export default {
   created() {
     const all = this.$store.getters.all
     if (all.length === 0) {
-      this.$store.dispatch('getAll')
+      this.$store.dispatch('getAll').then(() => {
+        this.ready = true
+      })
+    } else {
+      this.ready = true
     }
   }
 }
