@@ -3,9 +3,15 @@ import 'buefy/dist/buefy.css'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Buefy from 'buefy'
+import Button from 'buefy/src/components/button'
+import Input from 'buefy/src/components/input'
+import Select from 'buefy/src/components/select'
+import ConfigComponent from 'buefy/src/utils/ConfigComponent.js'
 
-Vue.use(Buefy, {
+Vue.use(Button)
+Vue.use(Input)
+Vue.use(Select)
+ConfigComponent.setOptions({
   defaultIconPack: 'fas',
   defaultContainerElement: '#content'
 })
